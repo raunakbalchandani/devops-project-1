@@ -10,7 +10,7 @@ module "networking" {
   vpc_cidr             = var.vpc_cidr
   vpc_name             = var.vpc_name
   cidr_public_subnet   = var.cidr_public_subnet
-  eu_availability_zone = var.eu_availability_zone
+  eu_availability_zone = var.us_availability_zone
   cidr_private_subnet  = var.cidr_private_subnet
 }
 
@@ -82,7 +82,7 @@ module "rds_db_instance" {
   subnet_groups        = tolist(module.networking.dev_proj_1_public_subnets)
   rds_mysql_sg_id      = module.security_group.rds_mysql_sg_id
   mysql_db_identifier  = "mydb"
-  mysql_username       = "dbuser"
-  mysql_password       = "dbpassword"
+  mysql_username       = "admin"
+  mysql_password       = "admin"
   mysql_dbname         = "devprojdb"
 }

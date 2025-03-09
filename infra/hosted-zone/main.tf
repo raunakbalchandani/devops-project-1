@@ -8,7 +8,7 @@ data "aws_route53_zone" "dev_proj_1_jhooq_org" {
 }
 
 resource "aws_route53_record" "lb_record" {
-  zone_id = data.aws_route53_zone.dev_proj_1_jhooq_org.zone_id
+  zone_id = data.aws_route53_zone.dev_proj_1_twistedtea.in.zone_id
   name    = var.domain_name
   type    = "A"
 
@@ -20,5 +20,5 @@ resource "aws_route53_record" "lb_record" {
 }
 
 output "hosted_zone_id" {
-  value = data.aws_route53_zone.dev_proj_1_jhooq_org.zone_id
+  value = data.aws_route53_zone.dev_proj_1_twistedtea.in.zone_id
 }
